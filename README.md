@@ -1,6 +1,6 @@
 # Scripts for building binary wheels
 
-These scripts are meant to simplify life of a developer who wants to distribute a cross-platform Python package with dynamic libraries through PyPI binary wheel system. 
+These scripts are meant to simplify life of a developer who wants to distribute a cross-platform Python package with dynamic libraries through PyPI binary wheel system.
 
 The scripts assume use of CFFI and don't work for Cython extensions, as this would be much more complicated.
 
@@ -10,14 +10,15 @@ The scripts assume use of CFFI and don't work for Cython extensions, as this wou
 * CFFI is used in ABI mode, that is, the dynamic library doesn't have any references to Python whatsoever
 * The Python code is compatible with both 2 and 3 versions
 
-### Linux 
+### Linux
 
 * The submodule directory must contain a Dockerfile based on CentOS 6, so that manylinux1 wheels can be built
+* The script will use the default G++ compiler; tweak $PATH in the Dockerfile to use a custom one
 
-### OS X 
+### OS X
 
 * Official distribution of Python is required in `/usr/local/bin`, with recent `pip` and `delocate` packages
-* `gcc-5` must be installed through homebrew package manager (system-installed 'gcc' is way too old)
+* `cmake` and `gcc5` must be installed through homebrew package manager (system-installed 'gcc' is way too old)
 
 ### Windows
 
@@ -28,7 +29,7 @@ The scripts assume use of CFFI and don't work for Cython extensions, as this wou
 
 Under the above assumptions it's relatively easy to build binary wheels for all platforms and Python versions.
 
-Each script takes two arguments: 
+Each script takes two arguments:
 * submodule directory name;
 * name of the cmake target
 
