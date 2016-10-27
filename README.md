@@ -17,8 +17,8 @@ The scripts assume use of CFFI and don't work for Cython extensions, as this wou
 
 ### OS X
 
-* Official distribution of Python is required in `/usr/local/bin`, with recent `pip` and `delocate` packages
-* `cmake` and `gcc5` must be installed through homebrew package manager (system-installed 'gcc' is way too old)
+* Official distribution of Python 3 is expected in `/usr/local/bin`, with recent `pip` and `delocate` packages
+* `cmake` and `gcc` must be installed through homebrew package manager (system-installed 'gcc' is way too old)
 
 ### Windows
 

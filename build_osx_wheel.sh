@@ -8,9 +8,9 @@ TARGET=$2
 
 rm -rf dist &&\
 cd $SUBMODULE && mkdir -p build && cd build &&\
-    cmake -DCMAKE_C_COMPILER=gcc-5 -DCMAKE_CXX_COMPILER=g++-5 -DCMAKE_BUILD_TYPE=Release .. &&\
+    cmake -DCMAKE_C_COMPILER=gcc-6 -DCMAKE_CXX_COMPILER=g++-6 -DCMAKE_BUILD_TYPE=Release .. &&\
     make $TARGET && cd ../../ &&\
-    /usr/local/bin/python setup.py bdist_wheel --universal --plat-name=macosx_10_6_intel &&\
+    /usr/local/bin/python3 setup.py bdist_wheel --universal --plat-name=macosx_10_6_intel &&\
     delocate-wheel dist/*.whl
 
 # the resulting wheel must be uploaded to PyPI using 'twine upload' command
