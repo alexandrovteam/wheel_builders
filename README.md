@@ -17,8 +17,9 @@ The scripts assume use of CFFI and don't work for Cython extensions, as this wou
 
 ### OS X
 
-* Official distribution of Python 3 is expected in `/usr/local/bin`, with recent `pip` and `delocate` packages
-* `cmake` and `gcc` must be installed through homebrew package manager (system-installed 'gcc' is way too old)
+* `brew install python3 gcc cmake`
+* If GCC version is > 7, edit `CC` and `CXX` in `build_osx_wheel.sh` accordingly
+* `pip3 install cffi delocate`
 
 ### Windows
 
